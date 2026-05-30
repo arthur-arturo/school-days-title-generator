@@ -15,10 +15,12 @@ const defaultState: GeneratorState = {
   fontFamily: "Gothic A1",
   fontSize: 235,
   letterSpacing: 2,
-  fillColor: "#ffffff",
   bgColor: "#002d62", // Official School Days solid deep blue background color
   vhsEffect: false,
-  quoteFontSize: 21
+  quoteFontSize: 21,
+  titleColor: "#ffffff",
+  subtitleColor: "#ffffff",
+  quoteColor: "#ffffff"
 };
 
 export const App: React.FC = () => {

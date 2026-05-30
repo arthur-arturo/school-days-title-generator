@@ -56,7 +56,19 @@ export const EditorPanel: React.FC<EditorPanelProps> = ({ state, onChange }) => 
               </div>
             </div>
 
-            <div>
+            <div className="flex items-center gap-4 bg-slate-350 p-2 border border-slate-400 rounded-none justify-between">
+              <span className="text-xs font-bold text-slate-800 font-sans">Color del Título</span>
+              <div className="color-picker-wrapper">
+                <input 
+                  type="color" 
+                  value={state.titleColor} 
+                  onChange={(e) => onChange('titleColor', e.target.value)}
+                  className="color-picker-input cursor-pointer"
+                />
+              </div>
+            </div>
+
+            <div className="pt-2">
               <label htmlFor="subJapanese" className="block text-xs font-bold text-slate-800 mb-1.5 font-sans">Subtítulo en Japonés</label>
               <input 
                 type="text" 
@@ -65,6 +77,18 @@ export const EditorPanel: React.FC<EditorPanelProps> = ({ state, onChange }) => 
                 onChange={(e) => onChange('subJapanese', e.target.value)}
                 className="w-full win95-inset px-2.5 py-1.5 text-sm text-black focus:outline-none font-mono"
               />
+            </div>
+
+            <div className="flex items-center gap-4 bg-slate-350 p-2 border border-slate-400 rounded-none justify-between">
+              <span className="text-xs font-bold text-slate-800 font-sans">Color del Subtítulo</span>
+              <div className="color-picker-wrapper">
+                <input 
+                  type="color" 
+                  value={state.subtitleColor} 
+                  onChange={(e) => onChange('subtitleColor', e.target.value)}
+                  className="color-picker-input cursor-pointer"
+                />
+              </div>
             </div>
           </div>
 
@@ -84,6 +108,18 @@ export const EditorPanel: React.FC<EditorPanelProps> = ({ state, onChange }) => 
                 onChange={(e) => onChange('bottomQuote', e.target.value)}
                 className="w-full win95-inset px-2.5 py-1.5 text-xs text-black focus:outline-none leading-normal resize-none font-mono"
               />
+            </div>
+
+            <div className="flex items-center gap-4 bg-slate-350 p-2 border border-slate-400 rounded-none justify-between">
+              <span className="text-xs font-bold text-slate-800 font-sans">Color de la Cita</span>
+              <div className="color-picker-wrapper">
+                <input 
+                  type="color" 
+                  value={state.quoteColor} 
+                  onChange={(e) => onChange('quoteColor', e.target.value)}
+                  className="color-picker-input cursor-pointer"
+                />
+              </div>
             </div>
           </div>
 

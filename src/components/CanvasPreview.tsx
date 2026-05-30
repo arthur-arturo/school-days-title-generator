@@ -42,7 +42,7 @@ export const CanvasPreview: React.FC<CanvasPreviewProps> = ({ state, canvasRef }
       const yPos = height / 2;
 
       // Draw "School" text (Line 1)
-      ctx.fillStyle = state.fillColor;
+      ctx.fillStyle = state.titleColor;
       ctx.fillText(state.textLine1, startX, yPos);
 
       // Draw "Days" text (Line 2)
@@ -52,7 +52,7 @@ export const CanvasPreview: React.FC<CanvasPreviewProps> = ({ state, canvasRef }
       // 3. Draw Japanese Subtitle ("スクールデイズ") above "Days" text block right edge
       if (state.subJapanese) {
         ctx.font = `900 ${state.fontSize * 0.24}px "${state.fontFamily}", sans-serif`;
-        ctx.fillStyle = state.fillColor;
+        ctx.fillStyle = state.subtitleColor;
         ctx.textAlign = 'right';
         ctx.textBaseline = 'bottom';
         
@@ -65,7 +65,7 @@ export const CanvasPreview: React.FC<CanvasPreviewProps> = ({ state, canvasRef }
       // 4. Draw English Synopsis Quote at the bottom-left edge, perfectly aligned with the left edge of "School"
       if (state.bottomQuote) {
         ctx.font = `bold ${state.quoteFontSize}px "Times New Roman", serif`;
-        ctx.fillStyle = state.fillColor;
+        ctx.fillStyle = state.quoteColor;
         ctx.textAlign = 'left';
         ctx.textBaseline = 'bottom';
         

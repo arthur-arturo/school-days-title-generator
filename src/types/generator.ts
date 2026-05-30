@@ -6,8 +6,10 @@ export interface GeneratorState {
   fontFamily: string;
   fontSize: number;
   letterSpacing: number;
-  fillColor: string;
   bgColor: string;
   vhsEffect: boolean;
   quoteFontSize: number;
+  titleColor: string;
+  subtitleColor: string;
+  quoteColor: string;
 }
