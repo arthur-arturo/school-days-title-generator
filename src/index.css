@@ -12,9 +12,10 @@ button, a, input[type="range"], input[type="color"], .win95-button, .theme-card 
   cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M0,0 L0,19 L5,14 L10,24 L13,22 L8.5,13 L14,13 Z" fill="white" stroke="black" stroke-width="1.5"/></svg>'), pointer !important;
 }
 
-/* Windows 95 Desktop Background Teal */
+/* Atmospheric Dark Vignette Background with Circular Diffused Center Lighting */
 .win95-desktop {
-  background-color: #008080;
+  background: radial-gradient(circle at center, #ffffff 0%, #a2a2a2 20%, #4a4a4a 55%, #181818 85%, #050505 100%);
+  background-attachment: fixed;
   font-family: "Courier New", Courier, monospace, sans-serif;
 }
 

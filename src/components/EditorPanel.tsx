@@ -1,6 +1,7 @@
 import React from 'react';
 import type { GeneratorState } from '../types/generator';
 import { Type, Palette } from 'lucide-react';
+import { RetroColorPicker } from './RetroColorPicker';
 
 interface EditorPanelProps {
   state: GeneratorState;
@@ -56,16 +57,12 @@ export const EditorPanel: React.FC<EditorPanelProps> = ({ state, onChange }) => 
               </div>
             </div>
 
-            <div className="flex items-center gap-4 bg-slate-350 p-2 border border-slate-400 rounded-none justify-between">
-              <span className="text-xs font-bold text-slate-800 font-sans">Color del Título</span>
-              <div className="color-picker-wrapper">
-                <input 
-                  type="color" 
-                  value={state.titleColor} 
-                  onChange={(e) => onChange('titleColor', e.target.value)}
-                  className="color-picker-input cursor-pointer"
-                />
-              </div>
+            <div className="w-full">
+              <RetroColorPicker 
+                label="Color del Título" 
+                color={state.titleColor} 
+                onChange={(color) => onChange('titleColor', color)}
+              />
             </div>
 
             <div className="pt-2">
@@ -79,16 +76,12 @@ export const EditorPanel: React.FC<EditorPanelProps> = ({ state, onChange }) => 
               />
             </div>
 
-            <div className="flex items-center gap-4 bg-slate-350 p-2 border border-slate-400 rounded-none justify-between">
-              <span className="text-xs font-bold text-slate-800 font-sans">Color del Subtítulo</span>
-              <div className="color-picker-wrapper">
-                <input 
-                  type="color" 
-                  value={state.subtitleColor} 
-                  onChange={(e) => onChange('subtitleColor', e.target.value)}
-                  className="color-picker-input cursor-pointer"
-                />
-              </div>
+            <div className="w-full">
+              <RetroColorPicker 
+                label="Color del Subtítulo" 
+                color={state.subtitleColor} 
+                onChange={(color) => onChange('subtitleColor', color)}
+              />
             </div>
           </div>
 
@@ -110,16 +103,12 @@ export const EditorPanel: React.FC<EditorPanelProps> = ({ state, onChange }) => 
               />
             </div>
 
-            <div className="flex items-center gap-4 bg-slate-350 p-2 border border-slate-400 rounded-none justify-between">
-              <span className="text-xs font-bold text-slate-800 font-sans">Color de la Cita</span>
-              <div className="color-picker-wrapper">
-                <input 
-                  type="color" 
-                  value={state.quoteColor} 
-                  onChange={(e) => onChange('quoteColor', e.target.value)}
-                  className="color-picker-input cursor-pointer"
-                />
-              </div>
+            <div className="w-full">
+              <RetroColorPicker 
+                label="Color de la Cita" 
+                color={state.quoteColor} 
+                onChange={(color) => onChange('quoteColor', color)}
+              />
             </div>
           </div>
 
@@ -175,19 +164,12 @@ export const EditorPanel: React.FC<EditorPanelProps> = ({ state, onChange }) => 
             />
           </div>
 
-          <div className="flex items-center gap-4 bg-slate-350 p-2.5 border border-slate-400 rounded-none justify-between">
-            <div className="flex flex-col gap-0.5">
-              <span className="text-xs font-bold text-slate-800 font-sans">Color de Fondo</span>
-              <span className="text-[9px] text-slate-600">Default: Azul School Days</span>
-            </div>
-            <div className="color-picker-wrapper">
-              <input 
-                type="color" 
-                value={state.bgColor} 
-                onChange={(e) => onChange('bgColor', e.target.value)}
-                className="color-picker-input cursor-pointer"
-              />
-            </div>
+          <div className="w-full">
+            <RetroColorPicker 
+              label="Color de Fondo" 
+              color={state.bgColor} 
+              onChange={(color) => onChange('bgColor', color)}
+            />
           </div>
 
           <div className="flex items-center gap-4 bg-slate-350 p-2.5 border border-slate-400 rounded-none justify-between select-none">
