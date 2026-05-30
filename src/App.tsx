@@ -52,7 +52,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="win95-desktop min-h-screen flex flex-col select-none overflow-x-hidden text-black pb-8 relative">
+    <div className="win95-desktop min-h-screen flex flex-col select-none overflow-x-hidden text-black pb-16 relative">
       {/* 3D Panned CRT Background Monitor Layer */}
       <div className="crt-3d-monitor-container">
         <div className="crt-3d-monitor-screen" />
@@ -89,11 +89,6 @@ export const App: React.FC = () => {
         </div>
 
       </main>
-
-      {/* Retro Desktop taskbar Footer */}
-      <footer className="w-full py-2 px-6 bg-[#c0c0c0] border-t-2 border-white text-center text-xs text-slate-700 shrink-0 z-30 font-mono shadow-md mt-auto">
-        © 2026 school-days-title-generator.lnk • vaporwave_edition.sys
-      </footer>
     </div>
   );
 };

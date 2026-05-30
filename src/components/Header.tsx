@@ -23,7 +23,7 @@ export const Header: React.FC = () => {
   }, []);
 
   return (
-    <header className="w-full bg-[#c0c0c0] border-b-2 border-white px-2 py-1 flex items-center justify-between shrink-0 z-35 shadow-md text-black font-sans text-xs">
+    <header className="fixed bottom-0 left-0 right-0 w-full bg-[#c0c0c0] border-t-2 border-white px-2 py-1 flex items-center justify-between z-45 shadow-[0_-2px_0_0_#808080] text-black font-sans text-xs select-none">
       
       {/* Start Button & Title */}
       <div className="flex items-center gap-2">

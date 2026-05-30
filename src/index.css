@@ -34,17 +34,24 @@ button, a, input[type="range"], input[type="color"], .win95-button, .theme-card 
 /* 3D Angled CRT Monitor Screen */
 .crt-3d-monitor-screen {
   position: absolute;
-  top: -20%;
-  left: -20%;
-  width: 140%;
-  height: 140%;
-  /* 3D panning transform: tilted back, rotated, and shifted in perspective space */
-  transform: rotateX(18deg) rotateY(-14deg) rotateZ(-2deg) translateZ(-120px);
+  top: -40%;
+  left: -40%;
+  width: 180%;
+  height: 180%;
+  /* 3D panning transform: tilted back, rotated, shifted, and scaled up to cover all corners seamlessly */
+  transform: rotateX(18deg) rotateY(-14deg) rotateZ(-2deg) translateZ(-100px) scale(1.15);
   transform-style: preserve-3d;
   
-  /* Radial vignette light to create depth and visual focus */
-  background: radial-gradient(circle at 50% 50%, #ffffff 0%, #a2a2a2 18%, #4a4a4a 50%, #151515 80%, #030303 100%);
-  box-shadow: inset 0 0 120px rgba(0, 0, 0, 0.95);
+  /* Radial vignette with official School Days deep blue glow desaturating to white in center and black at edges */
+  background: radial-gradient(circle at 50% 50%, 
+    #ffffff 0%, 
+    #bcd2ee 12%, 
+    #002d62 38%, 
+    #0c1b35 60%, 
+    #181818 82%, 
+    #020202 100%
+  );
+  box-shadow: inset 0 0 160px rgba(0, 0, 0, 0.98);
   animation: crt-phosphor-glow-anim 8s infinite ease-in-out;
 }
 
