@@ -12,11 +12,78 @@ button, a, input[type="range"], input[type="color"], .win95-button, .theme-card 
   cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M0,0 L0,19 L5,14 L10,24 L13,22 L8.5,13 L14,13 Z" fill="white" stroke="black" stroke-width="1.5"/></svg>'), pointer !important;
 }
 
-/* Atmospheric Dark Vignette Background with Circular Diffused Center Lighting */
+/* Base Desktop background setting */
 .win95-desktop {
-  background: radial-gradient(circle at center, #ffffff 0%, #a2a2a2 20%, #4a4a4a 55%, #181818 85%, #050505 100%);
-  background-attachment: fixed;
+  background-color: #020202;
   font-family: "Courier New", Courier, monospace, sans-serif;
+}
+
+/* 3D Panned CRT Background Monitor Container */
+.crt-3d-monitor-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  perspective: 1200px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* 3D Angled CRT Monitor Screen */
+.crt-3d-monitor-screen {
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 140%;
+  height: 140%;
+  /* 3D panning transform: tilted back, rotated, and shifted in perspective space */
+  transform: rotateX(18deg) rotateY(-14deg) rotateZ(-2deg) translateZ(-120px);
+  transform-style: preserve-3d;
+  
+  /* Radial vignette light to create depth and visual focus */
+  background: radial-gradient(circle at 50% 50%, #ffffff 0%, #a2a2a2 18%, #4a4a4a 50%, #151515 80%, #030303 100%);
+  box-shadow: inset 0 0 120px rgba(0, 0, 0, 0.95);
+  animation: crt-phosphor-glow-anim 8s infinite ease-in-out;
+}
+
+/* Scanlines and RGB subpixel phosphor shadow mask texture */
+.crt-3d-monitor-screen::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: 
+    linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.28) 50%),
+    linear-gradient(90deg, rgba(255, 0, 0, 0.05), rgba(0, 255, 0, 0.03), rgba(0, 0, 255, 0.05));
+  background-size: 100% 6px, 6px 100%;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+/* Curved CRT screen bulge glass glare/reflection */
+.crt-3d-monitor-screen::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.03) 25%, transparent 50%, rgba(0, 0, 0, 0.35) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Subtle CRT beam intensity pulsing */
+@keyframes crt-phosphor-glow-anim {
+  0% {
+    filter: brightness(1) contrast(1);
+  }
+  50% {
+    filter: brightness(1.04) contrast(1.02);
+  }
+  100% {
+    filter: brightness(1) contrast(1);
+  }
 }
 
 /* Classic Windows 95 Double Bevel Window */

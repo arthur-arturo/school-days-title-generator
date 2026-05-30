@@ -52,12 +52,17 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="win95-desktop min-h-screen flex flex-col select-none overflow-x-hidden text-black pb-8">
+    <div className="win95-desktop min-h-screen flex flex-col select-none overflow-x-hidden text-black pb-8 relative">
+      {/* 3D Panned CRT Background Monitor Layer */}
+      <div className="crt-3d-monitor-container">
+        <div className="crt-3d-monitor-screen" />
+      </div>
+
       {/* Retro Styled startbar Header */}
       <Header />
 
       {/* Center Unified Single-Column Workspace Container */}
-      <main className="flex-1 w-full max-w-[1000px] mx-auto p-4 md:p-6 lg:p-8 flex flex-col gap-6 items-stretch justify-center">
+      <main className="flex-1 w-full max-w-[1000px] mx-auto p-4 md:p-6 lg:p-8 flex flex-col gap-6 items-stretch justify-center relative z-10">
         
         {/* Canvas Preview in Windows 95 Bevel Frame */}
         <CanvasPreview state={state} canvasRef={canvasRef} />
